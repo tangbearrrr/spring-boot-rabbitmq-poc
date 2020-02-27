@@ -1,5 +1,8 @@
 package com.tangbear.rabbitmqpoc.consumer;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tangbear.rabbitmqpoc.model.Person;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
@@ -7,7 +10,9 @@ import org.springframework.stereotype.Component;
 public class RabbitMqReceiver {
 
     @RabbitListener(queues = "${rabbit.mq.default.queue}")
-    public void receiveMessage(String message) {
-        System.out.println("Receive message from rabbitMQ: " + message);
+    public void receiveMessage(String message) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        Person person = mapper.readValue(message, Person.class);
+        System.out.println("Receive message from rabbitMQ: " + person.toString());
     }
 }
