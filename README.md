@@ -11,6 +11,7 @@
 - $ cd docker/
 - $ docker-compose up -d
 - $ Check container status : $ docker ps
+- Enter http://localhost:15672/ and create queue name: spring.boot.queue
 
 **Run Application**
 
