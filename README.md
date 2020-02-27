@@ -14,7 +14,7 @@
 - Visit http://localhost:15672/ 
 - username : guest 
 - password : guest
-- create queue name: spring.boot.queue
+- Create queue name: spring.boot.queue
 
 **Run Application**
 
