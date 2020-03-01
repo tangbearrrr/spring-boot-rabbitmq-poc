@@ -14,7 +14,10 @@
 - Visit http://localhost:15672/ 
 - username : guest 
 - password : guest
-- Create queue name: spring.boot.queue
+- Create queue name : spring.boot.queue
+- Create exhange name : spring.boot.exchange
+- Bind spring.boot.exchange to spring.boot.queue
+- Publish message at : http://localhost:15672/api/exchanges/{vhost}/{exchange}/publish
 
 **Run Application**
 
