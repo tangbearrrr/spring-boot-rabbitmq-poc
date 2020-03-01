@@ -12,7 +12,7 @@ import java.util.Date;
 public class RabbitMqReceiver {
 
     @RabbitListener(queues = "${spring.rabbitmq.default.queue}")
-    public void receiveMessage(String message) throws JsonProcessingException, InterruptedException {
+    public void receiveMessage(String message) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         Person person = mapper.readValue(message, Person.class);
         System.out.println("Receive message from rabbitMQ: " + person.toString() + "TIME : " + new Date());
