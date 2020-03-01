@@ -1,4 +1,4 @@
-package com.tangbear.rabbitmqpoc.consumer;
+package com.tangbear.rabbitmqpoc.config;
 
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
